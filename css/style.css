@@ -1,0 +1,21 @@
+body {
+  background: #ccc; }
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  height: 100vh; }
+  .container div {
+    width: 100%; }
+    .container div h1 {
+      padding: 10px; }
+    .container div textarea {
+      font: 1.5em sans-serif;
+      width: 90%;
+      object-fit: cover;
+      padding: 10px;
+      border-radius: 4px;
+      resize: none; }
+      .container div textarea:focus {
+        outline: none; }

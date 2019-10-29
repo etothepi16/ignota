@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>ignota</title>
   </head>
   <body>
-    <input type="text" name="X-SAMPA test" id="x-sampa-text" />
-    <input type="text" name="X-SAMPA output" id="x-sampa-output" />
+    <div class="container">
+      <div id="xsampa">
+        <h1>X-SAMPA</h1>
+        <textarea name="X-SAMPA test" id="x-sampa-text"></textarea>
+      </div>
+      <div id="ipa">
+        <h1>IPA</h1>
+        <textarea name="X-SAMPA output" id="x-sampa-output"></textarea>
+      </div>
+    </div>
     <script src="conv.js"></script>
     <script src="main.js"></script>
   </body>
