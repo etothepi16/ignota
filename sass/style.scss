@@ -3,19 +3,15 @@ body {
 }
 .container {
   display: grid;
-  grid-template-columns: auto auto;
-  justify-items: center;
-  height: 100vh;
 
   div {
-    width: 100%;
+    h3,
     h1 {
       padding: 10px;
     }
     textarea {
       font: 1.5em sans-serif;
       width: 90%;
-      object-fit: cover;
       padding: 10px;
       border-radius: 4px;
       resize: none;

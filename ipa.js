@@ -139,6 +139,7 @@ const symbols = {
   '\u02DE': /`/g,
   '\u0303': /~/g,
   '\u0361': /\)/g,
+  '': /-/g,
 } // don't touch this unless STRICTLY necessary!
 
 //===============Consonant definitions===============//

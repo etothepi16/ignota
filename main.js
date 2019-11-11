@@ -24,6 +24,8 @@ function parseXsampa(value) {
 | average: 19-25 (35%)             |
 | moderately large: 26-33 (17%)    |
 | large: 34+ (10%)                 |
+| (I split this into large (9%)    |
+| and extra large (1%))            |
 |                                  |
 | VOWELS                           |
 | small: 2-4 (16%)                 |
@@ -45,7 +47,9 @@ var consonantSize =
     ? 'av'
     : cseed <= 90
     ? 'ml'
-    : 'lg'
+    : cseed <= 99
+    ? 'lg'
+    : 'xl'
 
 var vseed = getRandomInRange(1, 100)
 var vowelSize = vseed <= 16 ? 'sm' : vseed <= 67 ? 'md' : 'lg'
@@ -59,7 +63,9 @@ var numC =
     ? getRandomInRange(19, 25)
     : consonantSize == 'ml'
     ? getRandomInRange(26, 33)
-    : getRandomInRange(34, 95)
+    : consonantSize == 'lg'
+    ? getRandomInRange(34, 60)
+    : getRandomInRange(61, 122)
 
 var numV =
   vowelSize == 'sm'
@@ -68,20 +74,24 @@ var numV =
     ? getRandomInRange(5, 6)
     : getRandomInRange(7, 14)
 
-console.log(consonantSize, numC, vowelSize, numV)
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Now we have to choose segments according to some 'naturalism' heuristic...
-// http://linguistics.berkeley.edu/phonlab/documents/2007/Hyman_Phono_Universals_PL.pdf
-// Minimum of:
-// 3 stops
-// some feature contrasted with [-cont] (Rotokas [+stop] /p/ contrasts with [+voice] /b/, for example)
-// contrast by place of articulation
-// [+coronal] (dental, alveolar, postalveolar)
-// /i/ or /j/
-// At least two unrounded vowels
-// At least one non-front vowel
-// If a vertical vowel system: suprasegmental palatization and/or rounding contrast
-// Front vowels tend to be unrounded, back vowels tend to be rounded
-// More vowel distinctions are found high than mid, and more are found mid than low.
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.getElementById('info').innerHTML =
+  '<h3>Number of consonants in this language: ' +
+  numC +
+  '</h3><h3>Number of vowels in this language: ' +
+  numV +
+  '</h3>'
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Now we have to choose segments according to some 'naturalism' heuristic...                          //
+// http://linguistics.berkeley.edu/phonlab/documents/2007/Hyman_Phono_Universals_PL.pdf                //
+// Minimum of:                                                                                         //
+// 3 stops                                                                                             //
+// some feature contrasted with [-cont] (Rotokas [+stop] /p/ contrasts with [+voice] /b/, for example) //
+// contrast by place of articulation                                                                   //
+// [+coronal] (dental, alveolar, postalveolar)                                                         //
+// /i/ or /j/                                                                                          //
+// At least two unrounded vowels                                                                       //
+// At least one non-front vowel                                                                        //
+// If a vertical vowel system: suprasegmental palatization and/or rounding contrast                    //
+// Front vowels tend to be unrounded, back vowels tend to be rounded                                   //
+// More vowel distinctions are found high than mid, and more are found mid than low.                   //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
