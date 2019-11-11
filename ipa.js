@@ -10,7 +10,7 @@ const symbols = {
   ɗ: /d_</g,
   ɠ: /g_</g,
   ɻ: /r\\`/g,
-  '\u02FF': /_\?\\/g,
+  ˤ: /_\?\\/g,
   '\u2198': /<F>/g,
   '\u2197': /<R>/g,
   ɖ: /d`/g,
@@ -140,3 +140,122 @@ const symbols = {
   '\u0303': /~/g,
   '\u0361': /\)/g,
 } // don't touch this unless STRICTLY necessary!
+
+//===============Consonant definitions===============//
+const nasals = ['m', 'F', 'n', 'n`', 'J', 'N', 'N\\']
+
+const plosives = [
+  'p',
+  'b',
+  't',
+  'd',
+  't`',
+  'd`',
+  'c',
+  'J\\',
+  'k',
+  'g',
+  'q',
+  'G\\',
+  '>\\',
+  '?',
+]
+
+const fricatives = [
+  'p\\',
+  'B',
+  'f',
+  'v',
+  'T',
+  'D',
+  's',
+  'z',
+  'S',
+  'Z',
+  's`',
+  'z`',
+  'C',
+  'j\\',
+  'x',
+  'G',
+  'X',
+  'R',
+  'X\\',
+  '?\\',
+  'H\\',
+  '<\\',
+  'h',
+  'h\\',
+]
+
+const approximants = ['v\\', 'r\\', 'r\\`', 'j', 'M\\']
+
+const trills = ['B\\', 'r', 'R\\']
+
+const taps = ['4', 'r`']
+
+const lateralFricatives = ['K', 'K\\']
+
+const lateralApproximants = ['l', 'l`', 'L', 'L\\']
+
+const lateralFlap = ['l\\']
+
+const implosives = ['b_<', 'd_<', 'g_<', 'G\\_<', 'J\\_<']
+
+const clicks = ['0\\', '|\\', '!\\', '=\\', '|\\|\\']
+
+const coarticulations = ['W', 'w', 'H', 's\\', 'z\\', 'x\\']
+
+const affricates = [
+  'ts',
+  'dz',
+  'tS',
+  'dZ',
+  'ts\\',
+  'dz\\',
+  'tK',
+  'kp',
+  'gb',
+  'Nm',
+]
+
+const consonants = {
+  nasals,
+  plosives,
+  fricatives,
+  approximants,
+  trills,
+  taps,
+  lateralFricatives,
+  lateralApproximants,
+  lateralFlap,
+  implosives,
+  clicks,
+  coarticulations,
+  affricates,
+}
+
+//=============Vowel definitions=============//
+const close_ = ['i', 'y', '1', '}', 'M', 'u']
+
+const near_close = ['I', 'Y', 'I\\', 'U\\', 'U']
+
+const close_mid = ['e', '2', '@\\', '8', '7', 'o']
+
+const mid_ = ['@']
+
+const open_mid = ['E', '9', '3', '3\\', 'V', 'O']
+
+const near_open = ['{', '6']
+
+const open_ = ['a', '&', 'A', 'Q']
+
+const vowels = {
+  close_,
+  near_close,
+  close_mid,
+  mid_,
+  open_mid,
+  near_open,
+  open_,
+}
